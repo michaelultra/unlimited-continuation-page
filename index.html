@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's next after your cohort — Ultraspeaking</title>
+<!--
+  ============================================================================
+  EXPERIMENT: "Containment, not abundance" reframe of Unlimited.
+  ONE link, ONE variable (how Unlimited is framed). Tests whether re-shaping the
+  EXISTING product as a flexible, pausable, once-a-week practice membership
+  converts warm grads better than the current "unlimited access to everything."
+
+  ⚠️ FILL BEFORE SENDING (search for "data-fill"):
+    1. [UPGRADE-PRICE]  — confirmed grad/rollover price with Anne (avoid a repeat
+                          of the $3,300 mistake)
+    2. [COHORT-PRICE]   — current single-cohort price
+    3. [DEADLINE]       — offer deadline, if any (or delete the line)
+    4. [CHECKOUT-LINK]  — real Unlimited purchase URL (NOT the buried Pay-Then page)
+    5. [COACHING-COUNT] — number of included 1:1 sessions
+    6. [MANAGER-LINK]   — reimbursement one-pager link, or change CTA to "reply"
+  ============================================================================
+-->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0E1116; --bg-elev:#161B22; --bg-card:#1A2029;
+  --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.16);
+  --text:#F5F6F8; --text-muted:#A3ADBA; --text-dim:#7B8696;
+  --yellow:#FFD60A; --yellow-soft:#FFE876; --yellow-dim:rgba(255,214,10,.12);
+  --green:#4ADE80; --green-dim:rgba(74,222,128,.12);
+  --red:#F87171; --red-dim:rgba(248,113,113,.10);
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(620px circle at 12% -5%, rgba(255,214,10,.06), transparent 60%),
+    radial-gradient(680px circle at 92% 105%, rgba(74,222,128,.05), transparent 60%);}
+.container{max-width:1080px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.narrow{max-width:760px}
+h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.02em}
+h1{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1.02;letter-spacing:-.03em}
+h2{font-size:clamp(28px,3.4vw,40px);font-weight:700;line-height:1.1}
+h3{font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
+h4{font-size:18px;font-weight:700;line-height:1.3;letter-spacing:0}
+.acc{color:var(--yellow)}
+p{color:var(--text-muted)}
+.lead{font-size:clamp(17px,1.9vw,21px);color:var(--text-muted);line-height:1.55}
+.eyebrow{display:inline-block;font-family:var(--display);font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--yellow);
+  border:1px solid rgba(255,214,10,.4);border-radius:999px;padding:7px 16px;margin-bottom:28px}
+.divider{width:64px;height:4px;background:var(--yellow);border-radius:4px;margin:0 0 28px}
+section{padding:72px 0;border-bottom:1px solid var(--border)}
+.section-intro{font-size:17px;color:var(--text-muted);max-width:720px;margin-top:14px}
+.label{font-family:var(--display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--yellow);margin-bottom:14px}
+
+/* hero */
+.hero{padding:104px 0 80px;border-bottom:1px solid var(--border)}
+.hero p.lead{margin-top:24px;max-width:680px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;
+  font-size:17px;background:var(--yellow);color:#0E1116;border:none;border-radius:8px;
+  padding:16px 30px;text-decoration:none;cursor:pointer;transition:.2s ease}
+.btn:hover{transform:translateY(-2px);background:var(--yellow-soft)}
+.btn-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:36px}
+.btn-micro{font-size:14px;color:var(--text-dim)}
+
+/* cards */
+.grid{display:grid;gap:18px;margin-top:36px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.2s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+.card h4{margin-bottom:8px}
+.card p{font-size:15px}
+
+/* callout */
+.callout{background:var(--yellow-dim);border:1px solid rgba(255,214,10,.35);border-radius:12px;padding:26px 28px;margin-top:36px}
+.callout .label{margin-bottom:10px}
+.callout h3{margin-bottom:8px}
+.callout p{color:var(--text)}
+.callout--green{background:var(--green-dim);border-color:rgba(74,222,128,.35)}
+.callout--green .label{color:var(--green)}
+
+/* flag list */
+.flag{list-style:none;margin-top:32px}
+.flag li{display:flex;gap:14px;padding:16px 0;border-bottom:1px dashed var(--border)}
+.flag li:last-child{border-bottom:none}
+.flag .arr{color:var(--yellow);font-weight:700;flex-shrink:0;font-size:18px;line-height:1.4}
+.flag .ft{color:var(--text)}
+.flag .ft b{color:var(--text);font-weight:700}
+.flag .ft span{color:var(--text-muted)}
+
+/* Q&A */
+.qa{margin-top:36px}
+.qa-item{padding:22px 0;border-bottom:1px solid var(--border)}
+.qa-item:last-child{border-bottom:none}
+.qa-q{font-family:var(--display);font-weight:700;font-size:18px;color:var(--text);margin-bottom:6px}
+.qa-q::before{content:"“";color:var(--yellow)}
+.qa-q::after{content:"”";color:var(--yellow)}
+.qa-a{font-size:15.5px;color:var(--text-muted)}
+
+/* cost */
+.cost-wrap{background:var(--bg-elev);border:1px solid var(--border);border-radius:16px;padding:34px;margin-top:32px;display:flex;gap:28px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.cost-line{font-size:15px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;font-family:var(--display);font-weight:700;margin-bottom:6px}
+.cost-num{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,42px);color:var(--text)}
+.cost-num.big{color:var(--yellow)}
+.cost-arrow{font-size:28px;color:var(--text-dim)}
+
+/* fill-before-send token */
+.fill{font-family:ui-monospace,monospace;font-size:.92em;background:var(--yellow-dim);
+  border:1px dashed var(--yellow);border-radius:5px;padding:1px 7px;color:var(--yellow-soft);white-space:nowrap}
+
+/* final */
+.final{text-align:center;border-bottom:none;padding-bottom:96px}
+.final .divider{margin-left:auto;margin-right:auto}
+.final p{max-width:620px;margin:0 auto}
+.soft{margin-top:28px;font-size:15px;color:var(--text-dim);font-style:italic}
+footer{padding:40px 0;text-align:center;color:var(--text-dim);font-size:13px}
+
+@media(max-width:760px){
+  .container{padding:0 20px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .hero{padding:72px 0 56px}
+  .cost-wrap{flex-direction:column;align-items:flex-start;gap:14px}
+  .cost-arrow{transform:rotate(90deg)}
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">What's next after your cohort</span>
+    <h1>You're not done.<br><span class="acc">Don't lose what you built.</span></h1>
+    <p class="lead">Unlimited isn't a year of homework you have to keep up with. It's the simplest way to stay in practice on your own schedule, as little as once a week, so the thing you just worked so hard for doesn't quietly slip away.</p>
+    <div class="btn-row">
+      <a class="btn" href="#" data-fill="CHECKOUT-LINK">Continue with Unlimited →</a>
+      <span class="btn-micro">One-time upgrade for the year. Not a monthly subscription. Pause whenever life gets busy.</span>
+    </div>
+  </div>
+</header>
+
+<!-- THE HONEST PART -->
+<section>
+  <div class="container narrow">
+    <div class="divider"></div>
+    <h2>If you're a little tired right now, that's normal.</h2>
+    <p class="section-intro">You just spent five weeks pushing yourself out of your comfort zone. Most grads feel two things at once: proud of how far they came, and quietly worried it might fade. Both are real.</p>
+    <p style="margin-top:22px;font-size:17px;line-height:1.7">Here's the part almost everyone learns the hard way. The skill doesn't disappear in some dramatic moment. It just gets quiet when the reps stop. A month or two goes by, a big meeting shows up, and you reach for what you built, and it isn't quite as sharp as it was. Unlimited exists for one reason: to make "keep practicing" the easy default, instead of the thing you mean to do and never get around to.</p>
+  </div>
+</section>
+
+<!-- WHAT IT ACTUALLY IS -->
+<section>
+  <div class="container">
+    <div class="divider"></div>
+    <h2>What it actually is, in plain words</h2>
+    <p class="section-intro">Forget "unlimited access to everything." Here is what you're really getting, and what you're not.</p>
+    <ul class="flag">
+      <li><span class="arr">→</span><span class="ft"><b>A full year, on your schedule.</b> <span>Your 12 months start from the cohort you just finished. You drop in and out whenever you want. No fixed homework, no attendance rules.</span></span></li>
+      <li><span class="arr">→</span><span class="ft"><b>Once a week is a win.</b> <span>You do not have to go all-in to get your money's worth. Staying in motion is the whole point. A single live class on your lunch break counts.</span></span></li>
+      <li><span class="arr">→</span><span class="ft"><b>Any cohort, anytime.</b> <span>Retake Fundamentals as one of the strong voices in the room, step up to Professional or Level 2, or just join live practice classes. All of it is included.</span></span></li>
+      <li><span class="arr">→</span><span class="ft"><b>Private one-to-one coaching.</b> <span><span class="fill" data-fill="COACHING-COUNT">[X]</span> sessions with a coach, on the things actually on your plate at work, your real presentation, your real meeting, your real pitch.</span></span></li>
+      <li><span class="arr">→</span><span class="ft"><b>It's a one-time upgrade, not a treadmill.</b> <span>You pay once for the year. No monthly charge, no auto-renew you have to remember to cancel.</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- THE PAUSE -->
+<section>
+  <div class="container narrow">
+    <div class="divider"></div>
+    <h2>Worried life will get in the way? Pause it.</h2>
+    <p class="section-intro">This is the part most people don't know, and it's the part that matters most.</p>
+    <div class="callout">
+      <div class="label">The pause</div>
+      <h3>Hit pause for 1 to 6 months, whenever you need to.</h3>
+      <p>Busy quarter at work. A new baby. A stretch where you can't get to it. You pause, and your year waits for you. You are not paying for a clock that runs down while life happens. You're buying the right to keep going when you're ready.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT A LIGHT WEEK LOOKS LIKE -->
+<section>
+  <div class="container">
+    <div class="divider"></div>
+    <h2>What a light week actually looks like</h2>
+    <p class="section-intro">You don't need to reorganize your life around this. Here's what "staying in practice" really looks like for a busy person.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h4>The 20-minute week</h4>
+        <p>Drop into one live practice class on your lunch break. Get your reps, feel the muscle working, get on with your day.</p>
+      </div>
+      <div class="card">
+        <h4>The big-meeting week</h4>
+        <p>Something high-stakes is coming up. Book a one-to-one and rehearse the actual thing with a coach before you walk in.</p>
+      </div>
+      <div class="card">
+        <h4>The off week</h4>
+        <p>Do nothing. Pick it back up next week. Nothing expires, nothing is wasted, and no one is keeping score.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BELIEF-CHAIN FAQ -->
+<section>
+  <div class="container narrow">
+    <div class="divider"></div>
+    <h2>The honest questions you're probably asking</h2>
+    <div class="qa">
+      <div class="qa-item">
+        <div class="qa-q">What if I can only show up once a week?</div>
+        <div class="qa-a">Then once a week is your plan, and it's a good one. Most of the value is in staying in motion, not in maxing it out. The people who get the most out of this are not the ones who do the most. They're the ones who never fully stop.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">What if I get busy and stop?</div>
+        <div class="qa-a">Pause it. Your time waits for you, up to six months. You won't be paying for something you can't use.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">Is this lifetime, or a year?</div>
+        <div class="qa-a">A full year, starting from the cohort you just finished. Not lifetime, and not a monthly subscription. One upgrade, twelve months.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">Do I have to take another whole cohort?</div>
+        <div class="qa-a">No. You can drop into a single live class, retake a cohort for fun as a mentor, or go deeper into Professional or Level 2. Whatever fits. It's your call, not a requirement.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">Is it worth it if I don't go all-in?</div>
+        <div class="qa-a">That's the wrong question, and it's the one that keeps people stuck. It costs about the same as one more cohort, and you get the whole year plus private coaching. If you'd take even one more cohort this year, the year already pays for itself. Everything after that is upside.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">I'm wiped out. Can I start later?</div>
+        <div class="qa-a">Yes. Take your breath, then begin when you're ready, or start and pause once you're in. The point is to not let the door close while you rest.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST EQUIVALENCE -->
+<section>
+  <div class="container">
+    <div class="divider"></div>
+    <h2>The math nobody connects until it's spelled out</h2>
+    <p class="section-intro">Most grads picture Unlimited as a big, separate, expensive decision. It isn't. Put the two numbers next to each other.</p>
+    <div class="cost-wrap">
+      <div>
+        <div class="cost-line">One more cohort, on its own</div>
+        <div class="cost-num"><span class="fill" data-fill="COHORT-PRICE">[$ cohort]</span></div>
+      </div>
+      <div class="cost-arrow">→</div>
+      <div>
+        <div class="cost-line">The whole year + private coaching</div>
+        <div class="cost-num big"><span class="fill" data-fill="UPGRADE-PRICE">[$ upgrade]</span></div>
+      </div>
+    </div>
+    <p style="margin-top:24px;font-size:17px">For roughly the price of a single cohort, you get the full year, every cohort, live classes, and one-to-one coaching. If you were going to come back even once, you might as well have all of it.</p>
+  </div>
+</section>
+
+<!-- WHAT'S NEXT MAP -->
+<section>
+  <div class="container">
+    <div class="divider"></div>
+    <h2>Not sure what comes next? Here's the simple map.</h2>
+    <p class="section-intro">A lot of people get stuck here, not on whether to keep going, but on what to actually do next. There are really only three sane moves, and all three are included.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="label">If you want to go deeper on the basics</div>
+        <h4>Retake Fundamentals</h4>
+        <p>This time you're one of the strong voices in the room. People who retake as a mentor often grow the most, because teaching forces the skill in.</p>
+      </div>
+      <div class="card">
+        <div class="label">If you're ready for higher stakes</div>
+        <h4>Step into Professional or Level 2</h4>
+        <p>Build on what you have with harder, more real-world reps for the moments your career actually depends on.</p>
+      </div>
+      <div class="card">
+        <div class="label">If you just want to keep sharp</div>
+        <h4>Drop into live practice</h4>
+        <p>No cohort commitment. Show up to live classes whenever it fits, keep the reps going, stay in the room.</p>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:16px;color:var(--text-dim)">You don't have to pick today. With Unlimited, you can do any of them, in any order, all year.</p>
+  </div>
+</section>
+
+<!-- REIMBURSEMENT -->
+<section>
+  <div class="container narrow">
+    <div class="divider"></div>
+    <h2>Your company might pay for this</h2>
+    <p class="section-intro">More people qualify for learning and development reimbursement than use it. It's worth one email to find out.</p>
+    <ul class="flag">
+      <li><span class="arr">→</span><span class="ft"><b>It's a structured program, not a vague subscription.</b> <span>A 12-month program with scheduled sessions and clear outcomes, which is exactly what most L&D and procurement teams are set up to approve.</span></span></li>
+      <li><span class="arr">→</span><span class="ft"><b>We'll give you what you need to file.</b> <span>An invoice and a certificate of completion, ready to hand to your manager or finance team.</span></span></li>
+      <li><span class="arr">→</span><span class="ft"><b>The case writes itself.</b> <span>Clear, human communication is the part of your job that doesn't get automated away. That's an easy yes for most managers.</span></span></li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn" href="#" data-fill="MANAGER-LINK" style="background:transparent;border:1px solid var(--yellow);color:var(--yellow)">Get the one-pager for your manager</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container narrow">
+    <div class="divider"></div>
+    <h2>Stay in practice.</h2>
+    <p class="lead" style="margin-top:18px">You already did the hard part. This is just about not letting it fade. Keep the wheels on, on whatever cadence fits your life.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn" href="#" data-fill="CHECKOUT-LINK">Continue with Unlimited →</a>
+    </div>
+    <p class="btn-micro" style="margin-top:16px">Grad price held through <span class="fill" data-fill="DEADLINE">[date]</span>. Pause anytime. One-time upgrade, no subscription.</p>
+    <p class="soft">And if right now isn't the moment, that's completely okay. You can come back. Nothing you built disappears because you closed this tab. We're glad you're here either way.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">Ultraspeaking · Unlimited</div>
+</footer>
+
+</body>
+</html>
